@@ -120,6 +120,30 @@ function countVowels(text) {
 //   fizzBuzz(5) -> "1, 2, Fizz, 4, Buzz"
 // ---------------------------------------------------------------------
 function fizzBuzz(n) {
+    if (n<1) {
+        return "";
+    }
+
+    let result = "";
+
+    for (let i = 1; i <= n; i++) {
+
+        if (i > 1) {
+            result += ", ";
+        }
+
+        if (i % 3 === 0 && i % 5 === 0) {
+            result += "FizzBuzz";
+        } else if (i % 3 === 0) {
+            result += "Fizz";
+        } else if (i % 5 === 0) {
+            result += "Buzz";
+        } else {
+            result += i;
+        }
+    }
+    return result;
+    
 }
 
 
