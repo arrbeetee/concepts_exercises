@@ -435,6 +435,36 @@ function primesUpTo(n) {
 //     -> { wordCount: 4, longestWord: "quick" }
 // ---------------------------------------------------------------------
 function wordStatistics(sentence) {
+    let wordCount = 0;
+    let longestWord = "";
+    let currentWord = "";
+
+    for (i = 0; i <= sentence.length; i++){
+
+        if (sentence[i] === " " || i === sentence.length) {
+            
+            if (currentWord !=="") {
+
+                wordCount++;
+
+                    if (currentWord.length > longestWord.length) {
+                        longestWord = currentWord
+                    }
+                    currentWord = "";
+                    }
+
+        }   
+            else {
+                    currentWord = currentWord + sentence [i];
+                }
+    }
+
+    return {
+            wordCount: wordCount,
+            longestWord: longestWord
+    };
+
+
 }
 
 
